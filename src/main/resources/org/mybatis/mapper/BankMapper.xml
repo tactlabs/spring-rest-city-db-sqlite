@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tact.base.mybatis.mapper.BankMapper">
+    
+    <select id="findByName" resultType="map" parameterType="string">
+        select * from bank where name = #{name} limit 1
+    </select> 
+    
+    <update id="withdrawMoney" parameterType="string">
+    	update bank
+    	
+    </update>   
+    
+    <select id="findMultipleCitiesByStates" resultType="org.tact.base.mybatis.domain.City" parameterType="string">
+        select * from city where state = #{state}
+    </select>
+        
+</mapper>
